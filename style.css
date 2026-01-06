@@ -1,54 +1,40 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "Comic Sans MS", "Arial", sans-serif;
-  background: linear-gradient(135deg, #ffe6f0, #fff);
+  height: 100vh;
+  background-image: url("assets/bg.jpg");
+  background-size: cover;        /* FULL MÀN */
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: "Segoe UI", sans-serif;
 }
 
-/* Khung chính */
+/* khung chính */
 .container {
-  max-width: 400px;
-  margin: 50px auto;
-  background: #ffffff;
-  border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(255, 182, 193, 0.5);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  width: 90%;
+  max-width: 600px;
+  margin: 60px auto;
   padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
 }
 
-/* Tiêu đề */
-h1 {
-  text-align: center;
-  color: #ff69b4;
-}
-
-/* Nội dung chat */
+/* chat */
 .chat-box {
-  background: #fff0f5;
-  border-radius: 15px;
-  padding: 15px;
-  height: 300px;
-  overflow-y: auto;
-  margin-bottom: 15px;
+  margin-top: 20px;
 }
 
-/* Bong bóng chat */
 .message {
-  background: #ffb6c1;
-  color: #fff;
-  padding: 10px 15px;
-  border-radius: 15px;
+  padding: 12px 16px;
   margin-bottom: 10px;
+  border-radius: 16px;
   width: fit-content;
   max-width: 80%;
 }
 
-/* Tin nhắn của AI */
 .ai {
-  background: #ff69b4;
+  background: #ffd6e8;
+  color: #333;
 }
-
-/* Tin nhắn của người dùng */
-.user {
-  background: #ffc0cb;
-  margin-left: auto;
-  }
