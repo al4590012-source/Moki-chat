@@ -61,6 +61,24 @@ introScreen.addEventListener('click', () => {
   // Ẩn intro
   introScreen.style.display = 'none';
 
+  // Hiển thị canvas + overlay
+  canvas.style.display = 'block'; // chắc chắn canvas hiện
+  blinkOverlay.style.display = 'block';
+
+  setTimeout(() => {
+    welcomeBox.style.opacity = 1;
+
+    setTimeout(() => {
+      welcomeBox.style.opacity = 0;
+      blinkOverlay.style.display = 'none';
+      // Sau cinematic sẽ là game chính (em làm sau)
+    }, 2500);
+
+  }, 500);
+});
+  // Ẩn intro
+  introScreen.style.display = 'none';
+
   // Hiển thị canvas + bảng chào
   blinkOverlay.style.display = 'block';
   setTimeout(() => {
