@@ -5,25 +5,22 @@
   <title>Moki Chat</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="start-bg">
+<body>
 
-  <!-- Thỏ + tim + bong bóng -->
-  <div class="bunny">🐰</div>
-  <div class="heart">💗</div>
-  <div class="heart delay">💗</div>
-  <div class="bubble"></div>
-  <div class="bubble small"></div>
-
-  <!-- Start screen -->
-  <div class="start-screen">
-    <div class="start-box">
-      <h1>💗 Moki Chat 💗</h1>
-      <p>ấn vào đây để bắt đầu 💗✨</p>
-    </div>
+  <!-- ======= 1. INTRO thỏ nhảy ======= -->
+  <div id="introScreen">
+    <h2>🐰 Thỏ nhảy + Tim + Bong Bóng Intro</h2>
+    <p>Nhấn vào để vào game</p>
   </div>
 
-  <script>
+  <!-- ======= 2. CINEMATIC trần nhà ======= -->
+  <canvas id="roomCanvas"></canvas>
+  <div class="blink-overlay"></div>
+  <div class="welcome-box" id="welcomeBox">
+    <h1>Chào mừng đến Moki Chat 💗</h1>
+  </div>
 
-    
-
-    
+  <!-- ======= 3. JS ======= -->
+  <script src="script.js"></script>
+</body>
+  </html>
