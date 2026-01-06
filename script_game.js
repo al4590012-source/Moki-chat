@@ -1,11 +1,15 @@
 // -----------------------------
-// 1. Setup Canvas Background
+// 1. Setup Canvas Background (trần nhà anime)
 // -----------------------------
 const canvas = document.getElementById('roomCanvas');
 const ctx = canvas.getContext('2d');
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
 
 function drawCeiling() {
   const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
@@ -35,6 +39,43 @@ function flashEffect() {
   ctx.fillStyle = 'rgba(255,255,255,0.15)';
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 }
+
+function renderCinematic() {
+  drawCeiling();
+  drawLights();
+  flashEffect();
+}
+
+// -----------------------------
+// 2. Flow: Intro -> Cinematic
+// -----------------------------
+const introScreen = document.getElementById('introScreen');
+const welcomeBox = document.getElementById('welcomeBox');
+const blinkOverlay = document.querySelector('.blink-overlay');
+
+introScreen.addEventListener('click', () => {
+  // Ẩn intro
+  introScreen.style.display = 'none';
+
+  // Hiển thị canvas + overlay
+  canvas.style.display = 'block';
+  blinkOverlay.style.display = 'block';
+
+  // Vẽ cinematic ngay
+  renderCinematic();
+
+  setTimeout(() => {
+    welcomeBox.style.opacity = 1; // hiển thị bảng chào
+
+    // Ẩn bảng chào sau 2.5s
+    setTimeout(() => {
+      welcomeBox.style.opacity = 0;
+      blinkOverlay.style.display = 'none';
+      // Chỗ game chính sẽ tiếp tục sau
+    }, 2500);
+
+  }, 500); // delay nhỏ trước khi bảng chào
+});}
 
 function render() {
   drawCeiling();
