@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Comic Sans MS", "Arial", sans-serif;
+  background: linear-gradient(135deg, #ffe6f0, #fff);
+}
+
+/* Khung chính */
+.container {
+  max-width: 400px;
+  margin: 50px auto;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(255, 182, 193, 0.5);
+  padding: 20px;
+}
+
+/* Tiêu đề */
+h1 {
+  text-align: center;
+  color: #ff69b4;
+}
+
+/* Nội dung chat */
+.chat-box {
+  background: #fff0f5;
+  border-radius: 15px;
+  padding: 15px;
+  height: 300px;
+  overflow-y: auto;
+  margin-bottom: 15px;
+}
+
+/* Bong bóng chat */
+.message {
+  background: #ffb6c1;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  width: fit-content;
+  max-width: 80%;
+}
+
+/* Tin nhắn của AI */
+.ai {
+  background: #ff69b4;
+}
+
+/* Tin nhắn của người dùng */
+.user {
+  background: #ffc0cb;
+  margin-left: auto;
+  }
