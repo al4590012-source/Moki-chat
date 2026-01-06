@@ -1,0 +1,61 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Intro web */
+#introScreen {
+  position: fixed;
+  inset: 0;
+  background: #ffe4e1; /* màu nền hồng nhạt */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Segoe UI", sans-serif;
+  z-index: 100;
+  cursor: pointer;
+}
+
+/* Canvas full screen */
+#roomCanvas {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+}
+
+/* Hiệu ứng chớp mắt */
+.blink-overlay {
+  position: fixed;
+  inset: 0;
+  background: black;
+  z-index: 999;
+  animation: blink 1.5s forwards;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* Bảng chào mừng */
+.welcome-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 192, 203, 0.85);
+  padding: 30px 40px;
+  border-radius: 20px;
+  text-align: center;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 18px;
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(255, 105, 180, 0.5);
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 1s ease;
+  }
