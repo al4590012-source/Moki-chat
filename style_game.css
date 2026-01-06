@@ -21,6 +21,7 @@
 
 /* Canvas full screen */
 #roomCanvas {
+  display: none; /* ẩn ban đầu */
   position: fixed;
   inset: 0;
   z-index: 1;
@@ -30,6 +31,7 @@
 .blink-overlay {
   position: fixed;
   inset: 0;
+  display: none; /* ẩn ban đầu */
   background: black;
   z-index: 999;
   animation: blink 1.5s forwards;
@@ -58,4 +60,4 @@
   z-index: 1000;
   opacity: 0;
   transition: opacity 1s ease;
-  }
+                              }
