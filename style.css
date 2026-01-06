@@ -3,38 +3,103 @@
   box-sizing: border-box;
 }
 
-/* BODY + BACKGROUND */
+/* BODY */
 body {
   margin: 0;
   min-height: 100vh;
-
-  background-image: url("./images/file_00000000a2d072068c06a018a07425f1.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
+  background: linear-gradient(180deg, #ffe6ef, #fff);
   font-family: "Segoe UI", sans-serif;
-  position: relative;
   overflow: hidden;
+  position: relative;
 }
 
-/* PHẤN HỒNG PHỦ NHẸ */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: radial-gradient(
-    circle at center,
-    rgba(255, 192, 203, 0.25),
-    rgba(255, 182, 193, 0.18),
-    rgba(255, 182, 193, 0.1)
-  );
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* HỘP THOẠI */
+/* BẢNG TRẮNG */
 .dialog-box {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 680px;
+  background: white;
+  border-radius: 30px;
+  padding: 26px 30px;
+  box-shadow: 0 18px 40px rgba(255, 150, 200, 0.45);
+  z-index: 10;
+}
+
+/* 🐰 THỎ NHẢY */
+.bunny {
+  position: absolute;
+  font-size: 64px;
+  bottom: 120px;
+  left: 40px;
+  animation: bunnyJump 2.5s ease-in-out infinite;
+}
+
+@keyframes bunnyJump {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-30px); }
+  100% { transform: translateY(0); }
+}
+
+/* 💗 TIM BAY */
+.heart {
+  position: absolute;
+  font-size: 26px;
+  bottom: -40px;
+  left: 50%;
+  animation: heartFloat 6s linear infinite;
+  opacity: 0.7;
+}
+
+.heart.delay {
+  left: 60%;
+  animation-delay: 3s;
+}
+
+@keyframes heartFloat {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+  20% { opacity: 1; }
+  100% {
+    transform: translateY(-120vh) scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* 🫧 BONG BÓNG */
+.bubble {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(255, 182, 193, 0.25);
+  bottom: -80px;
+  left: 20%;
+  animation: bubbleUp 10s linear infinite;
+}
+
+.bubble.small {
+  width: 35px;
+  height: 35px;
+  left: 70%;
+  animation-duration: 7s;
+}
+
+@keyframes bubbleUp {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  20% { opacity: 1; }
+  100% {
+    transform: translateY(-130vh);
+    opacity: 0;
+  }
+}.dialog-box {
   position: fixed;
   bottom: 40px;
   left: 50%;
