@@ -1,3 +1,9 @@
+/* RESET */
+* {
+  box-sizing: border-box;
+}
+
+/* BODY + BACKGROUND */
 body {
   margin: 0;
   min-height: 100vh;
@@ -8,33 +14,69 @@ body {
   background-repeat: no-repeat;
 
   font-family: "Segoe UI", sans-serif;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Màn hình mở đầu */
-.start-screen {
+/* PHẤN HỒNG PHỦ NHẸ */
+body::after {
+  content: "";
   position: fixed;
   inset: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  z-index: 9999;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 192, 203, 0.25),
+    rgba(255, 182, 193, 0.18),
+    rgba(255, 182, 193, 0.1)
+  );
+  pointer-events: none;
+  z-index: 1;
 }
 
-/* Bảng trắng */
-.start-box {
-  background: rgba(255, 255, 255, 0.88);
-  padding: 28px 36px;
-  border-radius: 26px;
-  text-align: center;
-  box-shadow: 0 12px 30px rgba(255, 182, 193, 0.6);
-  animation: float 3s ease-in-out infinite;
+/* HỘP THOẠI */
+.dialog-box {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 92%;
+  max-width: 680px;
+
+  background: rgba(255, 255, 255, 0.94);
+  border-radius: 30px;
+  padding: 28px 32px;
+
+  box-shadow: 0 18px 40px rgba(255, 150, 200, 0.45);
+
+  font-size: 18px;
+  color: #4a2f3b;
+  line-height: 1.7;
+
+  z-index: 5;
+  animation: pop 0.45s ease-out;
 }
 
-.start-box h1 {
-  color: #ff6fae;
-  margin-bottom: 8px;
+/* TEXT */
+.dialog-box p {
+  margin: 0;
+  font-weight: 500;
 }
+
+/* ANIMATION */
+@keyframes pop {
+  0% {
+    transform: translateX(-50%) scale(0.95);
+    opacity: 0;
+  }
+  60% {
+    transform: translateX(-50%) scale(1.03);
+  }
+  100% {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+  }
+}}
 
 .start-box p {
   color: #5a3a4a;
