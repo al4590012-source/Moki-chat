@@ -1,25 +1,15 @@
 body {
-  background: hotpink !important;
-}
-body {
   margin: 0;
   min-height: 100vh;
+
   background-image: url("images/file_00000000a2d072068c06a018a07425f1.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
-  font-family: "Comic Sans MS", "Segoe UI", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.chat-box {
-  background: rgba(255, 255, 255, 0.85);
-  border-radius: 24px;
-  padding: 24px;
-  max-width: 320px;
-  text-align: center;
 
-  box-shadow: 0 10px 30px rgba(255, 182, 193, 0.6);
-  }
+  font-family: "Segoe UI", sans-serif;
+}
