@@ -8,11 +8,19 @@
 
 <body>
 
-  <div class="dialog-box">
-    <h1>💗 Moki Chat 💗</h1>
-    <p>Xin chào ~ mình là Moki ♡</p>
-    <p>Hôm nay bạn muốn nói chuyện gì nè? 💕</p>
+  <!-- Màn hình mở đầu -->
+  <div class="start-screen" onclick="enterGame()">
+    <div class="start-box">
+      <h1>💗 Moki Chat 💗</h1>
+      <p>Nhấn để bắt đầu ✨</p>
+    </div>
   </div>
+
+  <script>
+    function enterGame() {
+      window.location.href = "home.html";
+    }
+  </script>
 
 </body>
 </html>
