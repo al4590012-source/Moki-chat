@@ -1,40 +1,66 @@
-/* RESET */
+/* Reset */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-/* ===== BODY – START SCREEN ===== */
-body.start-bg {
-  min-height: 100vh;
-
-  /* BACKGROUND ANIME */
-  background-image: url("./images/file_00000000a2d072068c06a018a07425f1.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  font-family: "Segoe UI", sans-serif;
-  overflow: hidden;
-  position: relative;
-}
-
-/* PHẤN HỒNG PHỦ NHẸ */
-body.start-bg::after {
-  content: "";
+/* Intro web */
+#introScreen {
   position: fixed;
   inset: 0;
-  background: radial-gradient(
-    circle at center,
-    rgba(255, 192, 203, 0.25),
-    rgba(255, 182, 193, 0.15)
-  );
-  pointer-events: none;
+  background: #ffe4e1; /* màu nền hồng nhạt */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Segoe UI", sans-serif;
+  z-index: 100;
+  cursor: pointer;
+}
+
+/* Canvas full screen */
+#roomCanvas {
+  display: none; /* ẩn ban đầu */
+  position: fixed;
+  inset: 0;
   z-index: 1;
 }
 
-/* START SCREEN – BẢNG CLICK */
+/* Hiệu ứng chớp mắt */
+.blink-overlay {
+  position: fixed;
+  inset: 0;
+  display: none; /* ẩn ban đầu */
+  background: black;
+  z-index: 999;
+  animation: blink 1.5s forwards;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* Bảng chào mừng */
+.welcome-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 192, 203, 0.85);
+  padding: 30px 40px;
+  border-radius: 20px;
+  text-align: center;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 18px;
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(255, 105, 180, 0.5);
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 1s ease;
+}/* START SCREEN – BẢNG CLICK */
 .start-screen {
   position: fixed;
   inset: 0;
